@@ -14,6 +14,7 @@ export const getParks = () => {
         //taking that java and storing it then putting it in parks
         .then(parsedParks => {
             parks = parsedParks
+            console.log(parks)
         })
 }
 
