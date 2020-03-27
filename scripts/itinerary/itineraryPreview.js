@@ -1,5 +1,7 @@
 import {eateryHTML} from "../eateries/Eatery.js"
 import { useEateries } from "../eateries/EateryDataProvider.js"
+import { useAttractions } from "../attractions/BizzareDataProvider.js"
+import { bizzareHTML } from "../attractions/Bizzare.js"
 
 const eventHub = document.querySelector('.container')
 const contentTarget = document.querySelector(".previewContainer")
@@ -32,5 +34,19 @@ eventHub.addEventListener("eateryChosen", event =>{
 
     const eateryHTMLofChosen = eateryHTML(eaterySelection)
     previewContent[0] = eateryHTMLofChosen
+    render()
+})
+
+eventHub.addEventListener("bizzareChosen", event =>{
+   
+    const bizzares = useAttractions()
+    const theBizzareThatWasChosen = parseInt(event.detail.chosenBizzare)
+
+    const bizzareSelection = bizzares.find(bizzare => { 
+        return bizzare.id === theBizzareThatWasChosen
+    })
+
+    const bizzareHTMLofChosen = bizzareHTML(bizzareSelection)
+    previewContent[1] = bizzareHTMLofChosen
     render()
 })
