@@ -17,5 +17,10 @@ export const getEateries = () => {
 }
 
 export const useEateries = () => {
-    return eateries.slice()
+    const sortedEateries = eateries.sort((a, b) => {
+        if(a.state < b.state) { return -1; }
+        if(a.state > b.state) { return 1; }
+        return 0;
+    })
+    return sortedEateries.slice()
 }

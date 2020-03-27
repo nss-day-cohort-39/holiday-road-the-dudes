@@ -3,11 +3,15 @@ import { getEateries } from "./eateries/EateryDataProvider.js";
 import { getAttractions } from "./attractions/BizzareDataProvider.js";
 import { getWeather } from "./weather/WeatherDataProvider.js";
 import { parksSelect } from "./parks/ParksDropdown.js";
+import { eateriesSelect } from "./eateries/EateryDropdown.js";
 import { attractionslSelect } from "./attractions/BizzareDropdown.js";
 
 
 
+getEateries().then(eateriesSelect)
 getAttractions().then(attractionslSelect)
-// getEateries()
 getParks().then(parksSelect)
 // getWeather()
+
+
+
