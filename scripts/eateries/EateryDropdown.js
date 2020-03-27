@@ -46,6 +46,5 @@ contentTarget.addEventListener("change", changeEvent => {
         })
         //dispatch that custom event to the event hub
         eventHub.dispatchEvent(eateryChosenEvent)
-        console.log(`eateryChosen was broadcasted and the one is ${theChosenEatery}`)
     }
 })
