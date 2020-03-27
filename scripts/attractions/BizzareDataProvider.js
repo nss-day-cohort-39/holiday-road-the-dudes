@@ -8,3 +8,6 @@ export const getAttractions = () => {
   })
 }
 
+export const useAttractions =()=>{
+  return attractions.slice()
+}
