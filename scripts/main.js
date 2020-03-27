@@ -5,6 +5,7 @@ import { getWeather } from "./weather/WeatherDataProvider.js";
 import { parksSelect } from "./parks/ParksDropdown.js";
 import { eateriesSelect } from "./eateries/EateryDropdown.js";
 import { attractionslSelect } from "./attractions/BizzareDropdown.js";
+import './itinerary/itineraryPreview.js';
 
 
 
