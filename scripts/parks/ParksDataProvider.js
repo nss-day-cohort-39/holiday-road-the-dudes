@@ -6,21 +6,26 @@ import apiKeys from "../Settings.js"
 
 let parks = []
 
+export const useParks = () => {
+    const filteredParks = parks.filter( () => {
+        if (parks.designation.contains("National Park")) {
+            return true
+        }
+        return false
+    })
+    
+    return filteredParks.slice()
+}
+
 // fetching parks from API
 export const getParks = () => {
     return fetch(`https://developer.nps.gov/api/v1/parks?api_key=${apiKeys.npsKey}`)
-    //taking what was recieved(promise) and turning it into java
+    //taking what was recieved(promise) and turning it into javascript
         .then(response => response.json())
-        //taking that java and storing it then putting it in parks
+        //taking that javascript and storing it then putting it in parks
         .then(parsedParks => {
-            parks = parsedParks
-            console.log(parks)
-        })
+            parks = parsedParks.data
+        }).then(() => console.log(parks))
 }
 
 
-
-
-
-//NPS Link
-//https://developer.nps.gov/api/v1/parks?api_key=your_api_key
