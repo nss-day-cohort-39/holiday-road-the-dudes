@@ -15,3 +15,7 @@ export const getEateries = () => {
             eateries = parsedEateries
         }).then()
 }
+
+export const useEateries = () => {
+    return eateries.slice()
+}
