@@ -1,6 +1,6 @@
 import { useAttractions } from "./BizzareDataProvider.js"
 
-
+const contentTarget = document.querySelector(".attractionDropdown")
 
 
 export const attractionslSelect = () => {
@@ -13,12 +13,12 @@ export const attractionslSelect = () => {
             <option value="0">Bizzaries</option>   
             ${
                 attractionsCollection.map(singleAttraction => {
-                    return `<option>${singleAttraction.name}</option>`
+                    return `<option>${singleAttraction.name} (${singleAttraction.city}, ${singleAttraction.state})</option>`
                 })
             }
         </select> `
         }
     
-    renderAttractionsDropdown(attractions)
+   contentTarget.innerHTML = renderAttractionsDropdown(attractions)
 
 }
