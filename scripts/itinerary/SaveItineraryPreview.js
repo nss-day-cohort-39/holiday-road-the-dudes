@@ -44,27 +44,4 @@ saveItinerary(newSavedItinerary)
 })
 
 
-// contentTarget.addEventListener("click", e =>{
-//     if(e.target.id.startsWith("deleteNote--")){
-//         const [pefix, noteId] = e.target.id.split("--")
-//         deleteNote(noteId)
-//     }
-//   })
 
-
-//  eventHub.addEventListener("click", e => {
-//     if(e.target.id ==="submit") {
-//         const entryDate = document.querySelector("#journalDate").value
-//         const entryConcepts = document.querySelector("#concepts").value
-//         const entryText = document.querySelector("#journalEntry").value
-//         const entryMood = document.querySelector("#mood").value
-
-//         const newEntry = {
-//             date: entryDate,
-//             concept: entryConcepts,
-//             entry: entryText,
-//             mood: entryMood
-//         }
-//         saveEntries(newEntry)
-//     }
-// })
