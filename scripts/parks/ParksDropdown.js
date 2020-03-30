@@ -7,7 +7,6 @@ import { useParks } from "./ParksDataProvider.js"
 const contentTarget = document.querySelector(".parkDropdown")
 
 
-
 export const parksSelect = () => {
     const parks = useParks()
 
@@ -43,8 +42,12 @@ contentTarget.addEventListener("change", changeEvent => {
                 chosenPark: theChosenPark
             } 
         })
+
+        const previewStateChanged = new CustomEvent("previewStateChange", {
+
+        })
         //dispatch that custom event to the event hub
         eventHub.dispatchEvent(parkChosenEvent)
-
+        eventHub.dispatchEvent(previewStateChanged)
     }
 })

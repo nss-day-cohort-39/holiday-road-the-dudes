@@ -41,8 +41,12 @@ contentTarget.addEventListener("change", changeEvent => {
                 chosenBizzare: theChosenBizzare
             } 
         })
+
+        const previewStateChanged = new CustomEvent("previewStateChange", {
+
+        })
         //dispatch that custom event to the event hub
         eventHub.dispatchEvent(bizzareChosenEvent)
-
+        eventHub.dispatchEvent(previewStateChanged)
     }
 })

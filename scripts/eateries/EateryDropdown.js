@@ -44,7 +44,12 @@ contentTarget.addEventListener("change", changeEvent => {
                 chosenEatery: theChosenEatery
             } 
         })
+
+        const previewStateChanged = new CustomEvent("previewStateChange", {
+
+        })
         //dispatch that custom event to the event hub
         eventHub.dispatchEvent(eateryChosenEvent)
+        eventHub.dispatchEvent(previewStateChanged)
     }
 })

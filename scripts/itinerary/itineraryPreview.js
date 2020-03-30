@@ -15,7 +15,8 @@ const contentTarget = document.querySelector(".previewContainer")
 let previewContent = {
   parksPreview: '',
   eateryPreview: '',
-  attractionPreview: ''
+  attractionPreview: '',
+  saveButton: '',
 }
 
 //the is the function that executes rendering the current state of the preview section
@@ -24,9 +25,15 @@ const render = () => {
   contentTarget.innerHTML = `${previewContent.parksPreview}
   ${previewContent.eateryPreview}
   ${previewContent.attractionPreview}
+  ${previewContent.saveButton}
   `
 }
 
+const renderSaveButton = () => {
+    return `
+    <button id="saveButton">Save Itinerary</button>
+    `
+}
 
 //this event listener responds to when an eatery is selected in the eatery dropdown
 //it will turn the selected eatery into an HTML respresentation of that eatery, and then
@@ -71,5 +78,15 @@ eventHub.addEventListener("parkChosen", event =>{
 
     const parkHTMLofChosen = parkHTML(parkSelection)
     previewContent.parksPreview = parkHTMLofChosen
+    render()
+})
+
+
+eventHub.addEventListener("previewStateChange", stateChangeEvent => {
+    if (previewContent.attractionPreview !== "" 
+        && previewContent.eateryPreview !== "" 
+        && previewContent.parksPreview !== "") {
+            previewContent.saveButton = renderSaveButton()
+    }
     render()
 })
