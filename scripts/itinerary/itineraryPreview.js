@@ -75,4 +75,5 @@ eventHub.addEventListener("parkChosen", event =>{
     const parkHTMLofChosen = parkHTML(parkSelection)
     previewContent.parksPreview = parkHTMLofChosen
     render()
+
 })
