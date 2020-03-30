@@ -6,9 +6,14 @@ import apiKeys from "../Settings.js"
 
 let weather = []
 
+export const useWeather = () => {
+    return weather
+}
+
+
 // fetching parks from API
-export const getWeather = (city, state) => {
-    return fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city},${state}&APPID=${apiKeys.weatherKey}`)
+export const getWeather = (latitude, longitude) => {
+    return fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&APPID=${apiKeys.weatherKey}`)
     //taking what was recieved(promise) and turning it into java
         .then(response => response.json())
         //taking that java and storing it then putting it in parks
