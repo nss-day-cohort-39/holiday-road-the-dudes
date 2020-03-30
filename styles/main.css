@@ -1,3 +1,14 @@
+* {
+    box-sizing: border-box;
+}
+
 .previewContainer {
     border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.park, .eatery, .bizzare {
+    flex-basis: 28%
 }
