@@ -12,3 +12,9 @@
 .park, .eatery, .bizzare {
     flex-basis: 28%
 }
+
+.button {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+}

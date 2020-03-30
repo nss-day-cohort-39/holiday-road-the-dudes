@@ -31,7 +31,9 @@ const render = () => {
 
 const renderSaveButton = () => {
     return `
+    <section class="button">
     <button id="saveButton">Save Itinerary</button>
+    </section
     `
 }
 
