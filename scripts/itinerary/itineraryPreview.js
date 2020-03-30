@@ -11,13 +11,20 @@ const contentTarget = document.querySelector(".previewContainer")
 //this is the 'state' of the itinerary preview section
 //each event listener will update the state of the preview section when a selection is made
 //each event listener will render the current state the preview section
-let previewContent = ["", "", ""]
+
+let previewContent = {
+  parksPreview: '',
+  eateryPreview: '',
+  attractionPreview: ''
+}
 
 //the is the function that executes rendering the current state of the preview section
 //it is called within each custom event to render the current state of the preview section when a change is made
 const render = () => {
-    const previewContentJoined = previewContent.join("")
-    contentTarget.innerHTML = previewContentJoined
+  contentTarget.innerHTML = `${previewContent.parksPreview}
+  ${previewContent.eateryPreview}
+  ${previewContent.attractionPreview}
+  `
 }
 
 
@@ -35,7 +42,7 @@ eventHub.addEventListener("eateryChosen", event =>{
     })
 
     const eateryHTMLofChosen = eateryHTML(eaterySelection)
-    previewContent[2] = eateryHTMLofChosen
+    previewContent.eateryPreview = eateryHTMLofChosen
     render()
 })
 
@@ -49,7 +56,7 @@ eventHub.addEventListener("bizzareChosen", event =>{
     })
 
     const bizzareHTMLofChosen = bizzareHTML(bizzareSelection)
-    previewContent[1] = bizzareHTMLofChosen
+    previewContent.attractionPreview = bizzareHTMLofChosen
     render()
 })
 
@@ -63,6 +70,6 @@ eventHub.addEventListener("parkChosen", event =>{
     })
 
     const parkHTMLofChosen = parkHTML(parkSelection)
-    previewContent[0] = parkHTMLofChosen
+    previewContent.parksPreview = parkHTMLofChosen
     render()
 })
