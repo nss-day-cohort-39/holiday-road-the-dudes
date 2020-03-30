@@ -4,6 +4,7 @@ import { useAttractions } from "../attractions/BizzareDataProvider.js"
 import { bizzareHTML } from "../attractions/Bizzare.js"
 import { useParks } from "../parks/ParksDataProvider.js"
 import { parkHTML } from "../parks/Park.js"
+import { renderSaveButton } from "./SaveItineraryPreview.js"
 
 const eventHub = document.querySelector('.container')
 const contentTarget = document.querySelector(".previewContainer")
@@ -12,7 +13,7 @@ const contentTarget = document.querySelector(".previewContainer")
 //each event listener will update the state of the preview section when a selection is made
 //each event listener will render the current state the preview section
 
-let previewContent = {
+export let previewContent = {
   parksPreview: '',
   eateryPreview: '',
   attractionPreview: ''
@@ -21,10 +22,12 @@ let previewContent = {
 //the is the function that executes rendering the current state of the preview section
 //it is called within each custom event to render the current state of the preview section when a change is made
 const render = () => {
-  contentTarget.innerHTML = `${previewContent.parksPreview}
+  contentTarget.innerHTML = `
+  ${previewContent.parksPreview}
   ${previewContent.eateryPreview}
   ${previewContent.attractionPreview}
   `
+  renderSaveButton()
 }
 
 
@@ -72,4 +75,5 @@ eventHub.addEventListener("parkChosen", event =>{
     const parkHTMLofChosen = parkHTML(parkSelection)
     previewContent.parksPreview = parkHTMLofChosen
     render()
+
 })

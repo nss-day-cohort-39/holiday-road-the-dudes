@@ -6,6 +6,8 @@ import { parksSelect } from "./parks/ParksDropdown.js";
 import { eateriesSelect } from "./eateries/EateryDropdown.js";
 import { attractionslSelect } from "./attractions/BizzareDropdown.js";
 import './itinerary/itineraryPreview.js';
+import { getSavedItineraries } from "./itinerary/ItineraryDataProvider.js";
+import './itinerary/SaveItineraryPreview.js';
 import './weather/WeatherDisplay.js';
 
 
@@ -14,6 +16,6 @@ getEateries().then(eateriesSelect)
 getAttractions().then(attractionslSelect)
 getParks().then(parksSelect)
 // getWeather()
-
+getSavedItineraries()
 
 
