@@ -1,3 +1,3 @@
 export const parkHTML = (park) => {
-    return `<div class="park"><h3>${park.name}</h3></div>`
+    return `<div id="${park.id} "class="park"><h3>${park.name}</h3></div>`
 }
