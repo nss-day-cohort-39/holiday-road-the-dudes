@@ -8,6 +8,7 @@ import { attractionslSelect } from "./attractions/BizzareDropdown.js";
 import './itinerary/itineraryPreview.js';
 import { getSavedItineraries } from "./itinerary/ItineraryDataProvider.js";
 import './itinerary/SaveItineraryPreview.js';
+import './weather/WeatherDisplay.js';
 
 
 
