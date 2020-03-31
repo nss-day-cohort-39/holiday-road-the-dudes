@@ -1,0 +1,28 @@
+.itinerary {
+    border: 3px solid black;
+    text-align: center;
+    padding: 10px;
+    margin: 2rem;
+}
+.itinerary header {
+    font-weight: bold;
+    margin: 5px;
+}
+#saveItinerary {
+    display: flex;
+    flex-basis: 100%;
+    justify-content: center;
+}
+.ParentItineraryContainer {
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 70%;
+    justify-content: center;
+}
+.savedItineraryContainer {
+    display:flex;
+    flex-flow:column-reverse;
+    flex-basis: 20%;
+    text-align: center;
+}

@@ -1,16 +1,18 @@
 @import 'weather.css';
 @import 'preview.css';
+@import 'itineraries.css';
+
 
 * {
     box-sizing: border-box;
 }
-
-.ParentItineraryContainer {
-    border: 1px solid black;
+.dropdownContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    flex-basis: 100%;
 }
+
 
 .park, .eatery, .bizzare {
   text-align: center;
@@ -26,4 +28,10 @@
   display: flex;
   flex-basis: 100%;
   justify-content: center;
+}
+
+.container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
 }

@@ -31,6 +31,24 @@ const render = () => {
   
 }
 
+//Makes the dialog box show when the button is clicked
+const allDetailRender = () => {
+  const parkButton = document.querySelector('.park-detail')
+  //the event listener that dispatched which park is clicked
+    parkButton.addEventListener('click', (clickEvent) => {
+    if (clickEvent.target.id.includes('button--')) {
+        const [prefix, parkId] = clickEvent.target.id.split("--")
+        const parkButtonClicked = new CustomEvent ("parkButtonClicked", {
+            detail: {
+                parkDialogId: parkId
+            }
+        })
+
+        eventHub.dispatchEvent(parkButtonClicked)
+    }
+  })
+}
+
 
 //this event listener responds to when an eatery is selected in the eatery dropdown
 //it will turn the selected eatery into an HTML respresentation of that eatery, and then
@@ -48,6 +66,9 @@ eventHub.addEventListener("eateryChosen", event =>{
     const eateryHTMLofChosen = eateryHTML(eaterySelection)
     previewContent.eateryPreview = eateryHTMLofChosen
     render()
+
+    allDetailRender()
+    closeEvent()
 })
 
 eventHub.addEventListener("bizzareChosen", event =>{
@@ -62,6 +83,9 @@ eventHub.addEventListener("bizzareChosen", event =>{
     const bizzareHTMLofChosen = bizzareHTML(bizzareSelection)
     previewContent.attractionPreview = bizzareHTMLofChosen
     render()
+
+    parkDetailRender()
+    closeEvent()
 })
 
 eventHub.addEventListener("parkChosen", event =>{
@@ -77,18 +101,6 @@ eventHub.addEventListener("parkChosen", event =>{
     previewContent.parksPreview = parkHTMLofChosen
     render()
 
-    const parkButton = document.querySelector('.park-detail')
-    parkButton.addEventListener('click', (clickEvent) => {
-    if (clickEvent.target.id.includes('button--')) {
-        const [prefix, parkId] = clickEvent.target.id.split("--")
-        const parkButtonClicked = new CustomEvent ("parkButtonClicked", {
-            detail: {
-                parkDialogId: parkId
-            }
-        })
-
-        eventHub.dispatchEvent(parkButtonClicked)
-        console.log('click event dispatched')
-    }
-  })
+    allDetailRender()
+    closeEvent()
 })
