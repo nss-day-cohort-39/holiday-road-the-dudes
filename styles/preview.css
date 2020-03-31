@@ -1,0 +1,13 @@
+.parkImage {
+  width: 400px;
+  height: 400px;
+}
+
+.eatery_info, .attraction_info{
+  text-align: center;
+}
+
+.park-detail {
+  height: 50px;
+  width: 100px;
+}

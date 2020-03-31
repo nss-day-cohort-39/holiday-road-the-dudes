@@ -9,10 +9,11 @@ import './itinerary/itineraryPreview.js';
 import { getSavedItineraries } from "./itinerary/ItineraryDataProvider.js";
 import './itinerary/SaveItineraryPreview.js';
 import './weather/WeatherDisplay.js';
-import savedTripsFunc, { renderSavedItineraries } from "./itinerary/ItineraryList.js";
+import { renderSavedItineraries, savedTripsFunc } from "./itinerary/ItineraryList.js";
+import './parks/ParkDialogBox.js';
 
 
-//savedTripsFunc()
+
 getEateries()
     .then(eateriesSelect)
     .then(getAttractions)
@@ -22,9 +23,7 @@ getEateries()
     .then(getSavedItineraries)
     .then(renderSavedItineraries)
     .then(savedTripsFunc)
-   
 
-// getWeather()
 
 
 

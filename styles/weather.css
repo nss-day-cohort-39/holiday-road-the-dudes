@@ -1,9 +1,24 @@
+.weatherContainer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 100%;
+    justify-content: center;
+    border-top: 2px solid black;
+  }
+
 .forecast {
+    flex-basis: 100%;
     display: flex;
     flex-wrap: nowrap;
 }
 
+.forecast__title {
+    text-align: center;
+    flex-basis: 100%;
+}
+
 .forecast__day {
+    flex-basis: 100%;
     display: flex;
     flex-wrap: wrap;
 }
