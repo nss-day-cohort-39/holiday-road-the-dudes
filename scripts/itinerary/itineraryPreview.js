@@ -29,25 +29,32 @@ const render = () => {
   `
   renderSaveButton()
   
-}
 
-//Makes the dialog box show when the button is clicked
-const allDetailRender = () => {
-  const parkButton = document.querySelector('.park-detail')
-  //the event listener that dispatched which park is clicked
-    parkButton.addEventListener('click', (clickEvent) => {
-    if (clickEvent.target.id.includes('button--')) {
-        const [prefix, parkId] = clickEvent.target.id.split("--")
-        const parkButtonClicked = new CustomEvent ("parkButtonClicked", {
-            detail: {
-                parkDialogId: parkId
-            }
+    //if a parks Preview has been renedered in the preview container...
+    if(previewContent.parksPreview !== '') {
+        //...then find the detail button that corresponds to that park preview
+        const parkButton = document.querySelector('.park-detail')
+        //listen for a click on that button...
+        parkButton.addEventListener('click', (clickEvent) => {
+          //..only if the id includes button--  
+          if (clickEvent.target.id.includes('button--')) {
+              //get the id of the specific park
+              const [prefix, parkId] = clickEvent.target.id.split("--")
+              //dispatch an event to the eventHub that a park detail button was clicked
+              //with the detail of the parkId so we can match to the park object
+              const parkButtonClicked = new CustomEvent ("parkButtonClicked", {
+                  detail: {
+                      parkDialogId: parkId
+                  }
+              })
+      
+              eventHub.dispatchEvent(parkButtonClicked)
+          }
         })
-
-        eventHub.dispatchEvent(parkButtonClicked)
     }
-  })
+    
 }
+
 
 
 //this event listener responds to when an eatery is selected in the eatery dropdown
@@ -67,8 +74,6 @@ eventHub.addEventListener("eateryChosen", event =>{
     previewContent.eateryPreview = eateryHTMLofChosen
     render()
 
-    allDetailRender()
-    closeEvent()
 })
 
 eventHub.addEventListener("bizzareChosen", event =>{
@@ -84,8 +89,6 @@ eventHub.addEventListener("bizzareChosen", event =>{
     previewContent.attractionPreview = bizzareHTMLofChosen
     render()
 
-    parkDetailRender()
-    closeEvent()
 })
 
 eventHub.addEventListener("parkChosen", event =>{
@@ -101,6 +104,4 @@ eventHub.addEventListener("parkChosen", event =>{
     previewContent.parksPreview = parkHTMLofChosen
     render()
 
-    allDetailRender()
-    closeEvent()
 })
