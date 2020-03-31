@@ -9,13 +9,20 @@ import './itinerary/itineraryPreview.js';
 import { getSavedItineraries } from "./itinerary/ItineraryDataProvider.js";
 import './itinerary/SaveItineraryPreview.js';
 import './weather/WeatherDisplay.js';
+import { renderSavedItineraries } from "./itinerary/ItineraryList.js";
 
 
 
-getEateries().then(eateriesSelect)
-getAttractions().then(attractionslSelect)
-getParks().then(parksSelect)
+getEateries()
+    .then(eateriesSelect)
+    .then(getAttractions)
+    .then(attractionslSelect)
+    .then(getParks)
+    .then(parksSelect)
+    .then(getSavedItineraries)
+    .then(renderSavedItineraries)
+
 // getWeather()
-getSavedItineraries()
+
 
 

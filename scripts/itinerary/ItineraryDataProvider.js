@@ -1,5 +1,7 @@
 let itineraries =[]
 
+export const useItineraries = () => itineraries.slice()
+
 
 export const getSavedItineraries = () => {
     return fetch('http://localhost:3000/itineraries')
@@ -8,7 +10,7 @@ export const getSavedItineraries = () => {
         //taking that java and storing it then putting it in eateries
         .then(parsedItineraries => {
             itineraries = parsedItineraries
-        }).then( () => console.log(itineraries) )
+        })
 }
 
 export const saveItinerary = itinerary => {
