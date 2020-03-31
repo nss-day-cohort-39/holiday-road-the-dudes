@@ -28,6 +28,7 @@ const render = () => {
   ${previewContent.attractionPreview}
   `
   renderSaveButton()
+  
 }
 
 
@@ -76,4 +77,18 @@ eventHub.addEventListener("parkChosen", event =>{
     previewContent.parksPreview = parkHTMLofChosen
     render()
 
+    const parkButton = document.querySelector('.park-detail')
+    parkButton.addEventListener('click', (clickEvent) => {
+    if (clickEvent.target.id.includes('button--')) {
+        const [prefix, parkId] = clickEvent.target.id.split("--")
+        const parkButtonClicked = new CustomEvent ("parkButtonClicked", {
+            detail: {
+                parkDialogId: parkId
+            }
+        })
+
+        eventHub.dispatchEvent(parkButtonClicked)
+        console.log('click event dispatched')
+    }
+  })
 })
