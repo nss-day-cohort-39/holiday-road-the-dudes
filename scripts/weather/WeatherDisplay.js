@@ -59,4 +59,3 @@ eventHub.addEventListener("parkChosen", event => {
         </div>
         `
     })
-})

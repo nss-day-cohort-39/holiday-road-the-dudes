@@ -1,4 +1,6 @@
 @import 'weather.css';
+@import 'savedItineraries.css';
+
 
 * {
     box-sizing: border-box;
