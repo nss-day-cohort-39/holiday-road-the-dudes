@@ -33,10 +33,11 @@ eventHub.addEventListener("parkChosen", event =>{
     
     //get the weather data for the park with the specific lat and long
     getWeather(latitudeOfSelectedPark, longitudeOfSelectedPark).then(() => {
-        //then store the returned weather data in a variable
-        const weatherData = useWeather()
-        //then pass the weather data into the function that turns object into HTML
-        //and update contentTarget with HTML representation of weather data
-        contentTarget.innerHTML = weatherDataHTML(weatherData)
+        //update contentTarget with HTML representation of weather data
+        contentTarget.innerHTML = `
+        <div class="forecast">
+        ${weatherDataHTML()}
+        </div>
+        `
     })
 })
