@@ -35,6 +35,7 @@ eventHub.addEventListener("parkChosen", event =>{
     getWeather(latitudeOfSelectedPark, longitudeOfSelectedPark).then(() => {
         //update contentTarget with HTML representation of weather data
         contentTarget.innerHTML = `
+        <h3 class="forecast__title">Forecast for ${selectedParkObject.fullName}</h3>
         <div class="forecast">
         ${weatherDataHTML()}
         </div>

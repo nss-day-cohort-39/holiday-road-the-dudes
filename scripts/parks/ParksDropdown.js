@@ -40,7 +40,7 @@ contentTarget.addEventListener("change", changeEvent => {
         //broadcast a custom event when the change event occurs
         const parkChosenEvent = new CustomEvent("parkChosen", {
             detail: {
-                chosenPark: theChosenPark
+              chosenPark: theChosenPark
             } 
         })
         //dispatch that custom event to the event hub

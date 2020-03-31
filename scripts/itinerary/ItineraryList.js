@@ -51,6 +51,7 @@ const contentElement = document.querySelector(".savedItineraryContainer")
 // Adds a head title to the saved itineraries list
 export const savedTripsFunc = () => {contentElement.innerHTML += `<h2>Saved Trips</h2>`}
 
+<<<<<<< HEAD
 // Listen for the state to change
 eventHub.addEventListener("itineraryStateChanged", customEvent => {
     // When the state changes render this function
@@ -63,3 +64,9 @@ contentTarget.addEventListener("click", e =>{
         deleteItinerary(itineraryId)
     }
 })
+=======
+export const savedTripsFunc = () => {contentElement.innerHTML += `<h2>Saved Trips</h2>`}
+
+
+       
+>>>>>>> master

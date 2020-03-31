@@ -28,7 +28,33 @@ const render = () => {
   ${previewContent.attractionPreview}
   `
   renderSaveButton()
+  
+
+    //if a parks Preview has been renedered in the preview container...
+    if(previewContent.parksPreview !== '') {
+        //...then find the detail button that corresponds to that park preview
+        const parkButton = document.querySelector('.park-detail')
+        //listen for a click on that button...
+        parkButton.addEventListener('click', (clickEvent) => {
+          //..only if the id includes button--  
+          if (clickEvent.target.id.includes('button--')) {
+              //get the id of the specific park
+              const [prefix, parkId] = clickEvent.target.id.split("--")
+              //dispatch an event to the eventHub that a park detail button was clicked
+              //with the detail of the parkId so we can match to the park object
+              const parkButtonClicked = new CustomEvent ("parkButtonClicked", {
+                  detail: {
+                      parkDialogId: parkId
+                  }
+              })
+      
+              eventHub.dispatchEvent(parkButtonClicked)
+          }
+        })
+    }
+    
 }
+
 
 
 //this event listener responds to when an eatery is selected in the eatery dropdown
@@ -47,6 +73,7 @@ eventHub.addEventListener("eateryChosen", event =>{
     const eateryHTMLofChosen = eateryHTML(eaterySelection)
     previewContent.eateryPreview = eateryHTMLofChosen
     render()
+
 })
 
 eventHub.addEventListener("bizzareChosen", event =>{
@@ -61,6 +88,7 @@ eventHub.addEventListener("bizzareChosen", event =>{
     const bizzareHTMLofChosen = bizzareHTML(bizzareSelection)
     previewContent.attractionPreview = bizzareHTMLofChosen
     render()
+
 })
 
 eventHub.addEventListener("parkChosen", event =>{
