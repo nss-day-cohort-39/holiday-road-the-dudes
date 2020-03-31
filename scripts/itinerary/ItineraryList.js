@@ -40,21 +40,4 @@ export const renderSavedItineraries = () => {
   
 }
 
-
-
-
-// getNotes().then(()=>{
-    
-//     const allTheNotes = useNotes()
-//     const allTheCriminals = useCriminals()
-    
-//        contentTarget.innerHTML = allTheNotes.map(currentNoteObject => {
-//            const foundSingleCriminal = allTheCriminals.find(
-//                (singleCriminalObj) => {
-//                   return currentNoteObject.criminal === singleCriminalObj.id
-//                })
-//           return Note(currentNoteObject, foundSingleCriminal)
-//                }
-//                  ).join(" ") 
-                 
        

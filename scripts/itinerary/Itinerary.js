@@ -4,7 +4,7 @@
 
 export const itineraryHTML = (itineraryObject, parkObject, attractionObject, eateryObject) => {
     return `
-    <header>${itineraryObject.id}</header> 
+    <header>Trip ${itineraryObject.id}</header> 
     <div>${parkObject.name}</div>
     <div>${eateryObject.businessName}</div>
     <div>${attractionObject.name}</div>
