@@ -1,16 +1,15 @@
 @import 'weather.css';
+@import 'itineraries.css';
+
 
 * {
     box-sizing: border-box;
 }
-
-.ParentItineraryContainer {
-    border: 1px solid black;
+.dropdownContainer {
     display: flex;
-    flex-wrap: wrap;
-    
-    justify-content: center;
+    flex-basis: 100%;
 }
+
 
 .park, .eatery, .bizzare {
     flex-basis: 28%
@@ -21,13 +20,13 @@
     flex-basis: 100%;
     justify-content: center;
 }
-#saveItinerary {
-    display: flex;
-    flex-basis: 100%;
-    justify-content: center;
-}
 .weatherContainer {
     display: flex;
     flex-basis: 100%;
     justify-content: center;
+}
+.container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
 }
