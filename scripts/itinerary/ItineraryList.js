@@ -40,4 +40,10 @@ export const renderSavedItineraries = () => {
   
 }
 
+const contentElement = document.querySelector(".savedItineraryContainer")
+
+const savedTripsFunc = () => {contentElement.innerHTML += `<h2>Saved Trips</h2>`}
+
+export default savedTripsFunc
+
        
