@@ -9,6 +9,9 @@ export const itineraryHTML = (itineraryObject, parkObject, attractionObject, eat
     <div>${parkObject.name}</div>
     <div>${eateryObject.businessName}</div>
     <div>${attractionObject.name}</div>
+    <p>
+      <button id="deleteItinerary--${itineraryObject.id}">Delete Trip</button>
+    </p>
     </article>
     `
 }
