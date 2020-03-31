@@ -40,3 +40,23 @@ eventHub.addEventListener("parkChosen", event => {
     contentTarget.innerHTML = weatherDataHTML(weatherData);
   });
 });
+    //a function that stores the lat and long of the specific park 
+    //in the appropriate variables
+    const parkLatAndLong = (object) => {
+        latitudeOfSelectedPark = object.latitude
+        longitudeOfSelectedPark = object.longitude
+    }
+    
+    //call the function that actually assigns the variables the correct lat and long
+    parkLatAndLong(selectedParkObject)
+    
+    //get the weather data for the park with the specific lat and long
+    getWeather(latitudeOfSelectedPark, longitudeOfSelectedPark).then(() => {
+        //update contentTarget with HTML representation of weather data
+        contentTarget.innerHTML = `
+        <div class="forecast">
+        ${weatherDataHTML()}
+        </div>
+        `
+    })
+})

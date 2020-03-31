@@ -1,0 +1,13 @@
+.forecast {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.forecast__day {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.date, .temperatures, .conditions, .humidity, .wind {
+    flex-basis: 100%;
+}
