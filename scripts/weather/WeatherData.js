@@ -1,4 +1,4 @@
-export const weatherDataHTML = (weatherObject) => {
+  export const weatherDataHTML = (weatherObject) => {
     const kToF = (tempInKelvin) => {
         return `${Math.floor((tempInKelvin-273) * (9/5) +32)}`
     }
