@@ -1,8 +1,9 @@
 .itinerary {
-    border: 3px solid black;
+    border: 3px solid #8d6e63;
     text-align: center;
     padding: 10px;
     margin: 2rem;
+    border-radius: 3%;
 }
 .itinerary header {
     font-weight: bold;
@@ -11,13 +12,6 @@
 #saveItinerary {
     display: flex;
     flex-basis: 100%;
-    justify-content: center;
-}
-.ParentItineraryContainer {
-    border: 1px solid black;
-    display: flex;
-    flex-wrap: wrap;
-    flex-basis: 70%;
     justify-content: center;
 }
 .savedItineraryContainer {

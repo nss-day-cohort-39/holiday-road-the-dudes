@@ -1,0 +1,13 @@
+.dropdownContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-basis: 100%;
+    padding-bottom: 20px;
+    padding-top: 10px;
+    background-color:#8d6e63;
+}
+.dropdown {
+    margin: 1rem;
+    border-radius: 5%;
+}

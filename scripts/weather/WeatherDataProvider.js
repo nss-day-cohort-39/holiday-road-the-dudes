@@ -1,5 +1,5 @@
 /*
-    This component will get the data on the Weather from the Weather API.
+    This component will get the five day weather data from the Weather API.
 */
 
 import apiKeys from "../Settings.js"

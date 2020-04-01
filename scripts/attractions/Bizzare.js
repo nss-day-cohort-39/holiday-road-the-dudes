@@ -1,4 +1,4 @@
-
+//This function makes an HTML representtion 
 export const bizzareHTML = (bizzare) => {
     return `
     <div class="bizzare">

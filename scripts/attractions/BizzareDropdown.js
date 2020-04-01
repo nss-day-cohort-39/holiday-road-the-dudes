@@ -1,3 +1,5 @@
+// this module is responsible for rendering the attractions dropdown 
+
 import { useAttractions } from "./BizzareDataProvider.js"
 
 const contentTarget = document.querySelector(".attractionDropdown")
