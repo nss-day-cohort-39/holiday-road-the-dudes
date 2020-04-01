@@ -1,6 +1,19 @@
-let itineraries =[]
+/*
+    This component is reponsible for managing and manipulating the itinerary data
+    like getting, adding, and deleting
+*/
+const eventHub = document.querySelector(".container")
 
-export const useItineraries = () => itineraries.slice()
+// Defines a new custom event that the state changed
+const dispatchStateChangeEvent = () =>{
+    const intineraryStateChangeEvent = new CustomEvent("itineraryStateChanged")
+    eventHub.dispatchEvent(intineraryStateChangeEvent)
+    
+}
+
+
+let itineraries = []
+
 
 
 export const getSavedItineraries = () => {
@@ -11,10 +24,10 @@ export const getSavedItineraries = () => {
         .then(parsedItineraries => {
             itineraries = parsedItineraries
         })
-}
+    }
 
-export const saveItinerary = itinerary => {
-    return fetch('http://localhost:3000/itineraries', {
+    export const saveItinerary = itinerary => {
+        return fetch('http://localhost:3000/itineraries', {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -24,5 +37,15 @@ export const saveItinerary = itinerary => {
     })
     .then(getSavedItineraries)
     //lets other components know something changed
-    // .then(dispatchStateChangeEvent)
+    .then(dispatchStateChangeEvent)
 }
+
+export const deleteItinerary = itineraryId => {
+    return fetch(`http://localhost:3000/itineraries/${itineraryId}`, {
+        method: "DELETE"
+    })
+    .then(getSavedItineraries)
+    .then(dispatchStateChangeEvent)
+}
+
+export const useItineraries = () => itineraries.slice()
