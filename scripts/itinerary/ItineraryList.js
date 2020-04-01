@@ -13,7 +13,7 @@ const eventHub = document.querySelector(".container")
 const contentTarget = document.querySelector(".savedItineraries")
 
 export const renderSavedItineraries = () => {
-// getSavedItineraries().then(() => {
+ //getSavedItineraries().then(() => {
     // Save the imported data to specific variable names to use in the rest of the funcion
     const savedItinerariesArray = useItineraries()
     const allParksArray = useParks()
@@ -40,16 +40,16 @@ export const renderSavedItineraries = () => {
             })
             
             return itineraryHTML(currentItinerary, foundPark, foundAttraction, foundEatery )
-
+    
             
 })
 contentTarget.innerHTML = ItineraryListHTML.join("")
   
 }
-// )}
+
 
 const contentElement = document.querySelector(".savedItineraryContainer")
-// // Adds a head title to the saved itineraries list
+// Adds a head title to the saved itineraries list
 export const savedTripsFunc = () => {contentElement.innerHTML += `<h2>Saved Trips</h2>`}
 
 // Listen for the state to change
@@ -60,7 +60,7 @@ eventHub.addEventListener("itineraryStateChanged", customEvent => {
 // Targets a specific id when the delete button is clicked
 contentTarget.addEventListener("click", e =>{
     if(e.target.id.startsWith("deleteItinerary--")){
-        const [pefix, itineraryId] = e.target.id.split("--")
+        const [prefix, itineraryId] = e.target.id.split("--")
         deleteItinerary(itineraryId)
     }
 })
