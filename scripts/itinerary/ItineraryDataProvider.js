@@ -14,7 +14,6 @@ const dispatchStateChangeEvent = () =>{
 
 let itineraries =[]
 
-export const useItineraries = () => itineraries.slice()
 
 
 export const getSavedItineraries = () => {
@@ -25,10 +24,10 @@ export const getSavedItineraries = () => {
         .then(parsedItineraries => {
             itineraries = parsedItineraries
         })
-}
+    }
 
-export const saveItinerary = itinerary => {
-    return fetch('http://localhost:3000/itineraries', {
+    export const saveItinerary = itinerary => {
+        return fetch('http://localhost:3000/itineraries', {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -45,6 +44,8 @@ export const deleteItinerary = itineraryId => {
     return fetch(`http://localhost:3000/itineraries/${itineraryId}`, {
         method: "DELETE"
     })
-        .then(getSavedItineraries)
-        .then(dispatchStateChangeEvent)
+    .then(getSavedItineraries)
+    .then(dispatchStateChangeEvent)
 }
+
+export const useItineraries = () => itineraries.slice()

@@ -10,10 +10,10 @@ import { useAttractions } from "../attractions/BizzareDataProvider.js";
 
 
 const eventHub = document.querySelector(".container")
-const contentTarget = document.querySelector(".savedItineraryContainer")
+const contentTarget = document.querySelector(".savedItineraries")
 
 export const renderSavedItineraries = () => {
-getSavedItineraries().then(() => {
+// getSavedItineraries().then(() => {
     // Save the imported data to specific variable names to use in the rest of the funcion
     const savedItinerariesArray = useItineraries()
     const allParksArray = useParks()
@@ -45,13 +45,13 @@ getSavedItineraries().then(() => {
 })
 contentTarget.innerHTML = ItineraryListHTML.join("")
   
-})}
+}
+// )}
 
 const contentElement = document.querySelector(".savedItineraryContainer")
-// Adds a head title to the saved itineraries list
+// // Adds a head title to the saved itineraries list
 export const savedTripsFunc = () => {contentElement.innerHTML += `<h2>Saved Trips</h2>`}
 
-<<<<<<< HEAD
 // Listen for the state to change
 eventHub.addEventListener("itineraryStateChanged", customEvent => {
     // When the state changes render this function
@@ -64,9 +64,7 @@ contentTarget.addEventListener("click", e =>{
         deleteItinerary(itineraryId)
     }
 })
-=======
-export const savedTripsFunc = () => {contentElement.innerHTML += `<h2>Saved Trips</h2>`}
+
 
 
        
->>>>>>> master
