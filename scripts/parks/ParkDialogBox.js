@@ -1,3 +1,8 @@
+/*
+This module is responsible for creating the dialog for the park details button 
+and listening for when that details button is clicked
+*/
+
 import { useParks } from './ParksDataProvider.js'
 
 const contentTarget = document.querySelector('.detailsDialogContainer')

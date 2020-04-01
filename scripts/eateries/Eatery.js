@@ -1,3 +1,7 @@
+/*
+  This component provides the HTML representation for each eatery
+*/
+
 export const eateryHTML = (eatery) => {
     return `
     <div class="eatery">
