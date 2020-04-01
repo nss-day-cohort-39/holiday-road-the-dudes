@@ -4,5 +4,6 @@ export const bizzareHTML = (bizzare) => {
     <div class="bizzare">
       <h3>${bizzare.name}</h3>
       <div class='attraction_info'>${bizzare.description}</div>
+      <button class='attraction-detail' id="button--${bizzare.id}">Attraction Details</button>
     </div>`
 }

@@ -52,6 +52,51 @@ const render = () => {
           }
         })
     }
+
+    if(previewContent.eateryPreview !== '') {
+        //...then find the detail button that corresponds to that eatery preview
+        const eateryButton = document.querySelector('.eatery-detail')
+        //listen for a click on that button...
+        eateryButton.addEventListener('click', (clickEvent) => {
+          //..only if the id includes button--  
+          if (clickEvent.target.id.includes('button--')) {
+              //get the id of the specific eatery
+              const [prefix, eateryId] = clickEvent.target.id.split("--")
+              //dispatch an event to the eventHub that a eatery detail button was clicked
+              //with the detail of the eateryId so we can match to the eatery object
+              const eateryButtonClicked = new CustomEvent ("eateryButtonClicked", {
+                  detail: {
+                      eateryDialogId: parseInt(eateryId)
+                  }
+              })
+      
+              eventHub.dispatchEvent(eateryButtonClicked)
+          }
+        })
+    }
+
+    if(previewContent.attractionPreview !== '') {
+        //...then find the detail button that corresponds to that attraction preview
+        const attractionButton = document.querySelector('.attraction-detail')
+        //listen for a click on that button...
+        attractionButton.addEventListener('click', (clickEvent) => {
+          //..only if the id includes button--  
+          if (clickEvent.target.id.includes('button--')) {
+              //get the id of the specific attraction
+              const [prefix, attractionId] = clickEvent.target.id.split("--")
+              //dispatch an event to the eventHub that a attraction detail button was clicked
+              //with the detail of the attractionId so we can match to the attraction object
+              const attractionButtonClicked = new CustomEvent ("attractionButtonClicked", {
+                  detail: {
+                      attractionDialogId: parseInt(attractionId)
+                  }
+              })
+      
+              eventHub.dispatchEvent(attractionButtonClicked)
+              console.log(attractionId)
+          }
+        })
+    }
     
 }
 
