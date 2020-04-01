@@ -1,3 +1,8 @@
+/*
+    This component renders the HTML of the park, eatery, and attraction selected to the DOM 
+    and listens for a change in selection for any destination
+*/
+
 import {eateryHTML} from "../eateries/Eatery.js"
 import { useEateries } from "../eateries/EateryDataProvider.js"
 import { useAttractions } from "../attractions/BizzareDataProvider.js"
@@ -93,7 +98,6 @@ const render = () => {
               })
       
               eventHub.dispatchEvent(attractionButtonClicked)
-              console.log(attractionId)
           }
         })
     }

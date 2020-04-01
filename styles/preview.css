@@ -1,6 +1,6 @@
 .parkImage {
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
 }
 
 .eatery_info, .attraction_info{
@@ -12,6 +12,15 @@
   text-align: center;
 }
 
-.eatery-detail, .park-detail, .attraction-detail {
-  
+#saveItinerary {
+  margin: 1rem;
+}
+.ParentItineraryContainer {
+  border: 3px solid #8d6e63;
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 70%;
+  justify-content: center;
+  margin-top: 2rem;
+  border-radius: 3%;
 }

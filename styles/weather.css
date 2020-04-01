@@ -3,7 +3,6 @@
     flex-wrap: wrap;
     flex-basis: 100%;
     justify-content: center;
-    border-top: 2px solid black;
   }
 
 .forecast {
@@ -21,6 +20,7 @@
     flex-basis: 100%;
     display: flex;
     flex-wrap: wrap;
+    margin:1.5rem;
 }
 
 .date, .temperatures, .conditions, .humidity, .wind {

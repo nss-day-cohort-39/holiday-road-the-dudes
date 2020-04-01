@@ -22,8 +22,6 @@ eventHub.addEventListener("itineraryStateChanged", customEvent => {
 
   const render = () => {
     const contentTarget = document.querySelector(".savedItineraries")
-    // getSavedItineraries()
-    // .then(() => {
     // Save the imported data to specific variable names to use in the rest of the funcion
     const savedItinerariesArray = useItineraries()
     const allParksArray = useParks()
@@ -55,8 +53,6 @@ eventHub.addEventListener("itineraryStateChanged", customEvent => {
 })
 contentTarget.innerHTML = " "
 contentTarget.innerHTML = ItineraryListHTML.join("") 
-
-// }).then(console.log('I should have rendered'))
 
 }
  

@@ -1,3 +1,7 @@
+/* 
+    This component is responsoble for creating the HTML representation of the five day forecast
+*/
+
 import { useWeather } from "./WeatherDataProvider.js"
 
   export const weatherDataHTML = () => {

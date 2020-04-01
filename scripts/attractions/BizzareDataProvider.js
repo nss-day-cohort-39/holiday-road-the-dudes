@@ -1,3 +1,7 @@
+
+// this component retrieves the data from API and then turns the data into javascript then 
+//exports a copy of the data
+
 let attractions = []
 
 export const getAttractions = () => {

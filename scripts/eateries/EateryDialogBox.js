@@ -1,3 +1,6 @@
+/*
+    This component is responible for the creation and managment of the eatery diolog box
+*/
 import { useEateries } from './EateryDataProvider.js'
 
 const contentTarget = document.querySelector('.detailsDialogContainer')
