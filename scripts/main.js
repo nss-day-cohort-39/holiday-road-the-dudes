@@ -11,6 +11,8 @@ import './itinerary/SaveItineraryPreview.js';
 import './weather/WeatherDisplay.js';
 import { renderSavedItineraries, savedTripsFunc } from "./itinerary/ItineraryList.js";
 import './parks/ParkDialogBox.js';
+import './eateries/EateryDialogBox.js';
+import './attractions/BizzareDialogBox.js'
 
 
 
