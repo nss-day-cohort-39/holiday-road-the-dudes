@@ -35,9 +35,9 @@ eventHub.addEventListener("click", e => {
         const [prefix2, savedBizzareID] = bizzareSaved.split("--")
 
         const newSavedItinerary = {
-            parkId: savedParkID,
-            eateryId: parseInt(savedEateryID),
-            attractionId: parseInt(savedBizzareID)
+            park: savedParkID,
+            eatery: parseInt(savedEateryID),
+            attraction: parseInt(savedBizzareID)
         }
 saveItinerary(newSavedItinerary)
     }

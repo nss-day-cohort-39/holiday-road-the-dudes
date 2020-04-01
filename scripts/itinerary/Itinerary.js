@@ -14,4 +14,4 @@ export const itineraryHTML = (itineraryObject, parkObject, attractionObject, eat
     </p>
     </article>
     `
-}
+} 

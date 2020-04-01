@@ -10,13 +10,16 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    flex-basis: 100%;
+    flex-basis: 80%;
+    padding-bottom: 20px;
+    padding-top: 10px;
 }
 
 
 .park, .eatery, .bizzare {
   text-align: center;
   flex-basis: 28%;
+  padding: 10px;
 }
 
 .previewContainer {

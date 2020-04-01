@@ -1,22 +1,16 @@
 {
   "itineraries": [
     {
-      "parkId": "FBF9F793-5114-4B61-A5BA-6F9ADDFDF459",
-      "eateryId": 5,
-      "attractionId": 6,
+      "park": "C9056F71-7162-4208-8AE9-2D0AEFA594FD",
+      "eatery": 5,
+      "attraction": 8,
       "id": 1
     },
     {
-      "parkId": "6B1D053D-714F-46D1-B410-04BE868F14C1",
-      "eateryId": 5,
-      "attractionId": 3,
-      "id": 2
-    },
-    {
-      "parkId": "6FDE39B1-AB4A-4C9A-A5CD-4AF67601CD78",
-      "eateryId": 8,
-      "attractionId": 6,
-      "id": 3
+      "park": "C9056F71-7162-4208-8AE9-2D0AEFA594FD",
+      "eatery": 6,
+      "attraction": 10,
+      "id": 4
     }
   ],
   "parks": {
@@ -198,7 +192,7 @@
         "entrancePasses": [],
         "directionsUrl": "http://www.nps.gov/alag/planyourvisit/directions.htm",
         "url": "https://www.nps.gov/alag/index.htm",
-        "weatherInfo": "Located between the stormy north Pacific Ocean and the even stormier Bering Sea, the Alagnak Wild River is often a battleground between weather systems. When you visit, be prepared to encounter all types of weather.  On average, wet and cool conditions predominate in spring, summer, and fall. Winters are drier and colder.",
+        "weatherInfo": "Located between the stormy north Pacific Ocean and the even stormier Bering Sea, the Alagnak Wild River is often a battleground between weather systems. When you visit, be prepared to encounter all types of weather.  On average, wet and cool conditions predominate in spring, summer, and fall. Winters are drier and colder.",
         "name": "Alagnak",
         "operatingHours": [
           {
@@ -2674,7 +2668,7 @@
           }
         ],
         "latLong": "lat:38.8909354, long:-77.04409306",
-        "description": "Officially established in 1965, National Mall and Memorial Parks actually protects some of the older parkland in the National Park System. Areas within this premier park provide visitors with ample opportunities to commemorate presidential legacies; honor the courage and sacrifice of war veterans; and celebrate the United States commitment to freedom and equality.",
+        "description": "Officially established in 1965, National Mall and Memorial Parks actually protects some of the older parkland in the National Park System. Areas within this premier park provide visitors with ample opportunities to commemorate presidential legacies; honor the courage and sacrifice of war veterans; and celebrate the United States commitment to freedom and equality.",
         "images": [
           {
             "credit": "NPS Photo/Brian Hall",
