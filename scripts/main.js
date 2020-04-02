@@ -15,6 +15,7 @@ import './itinerary/ItineraryList.js';
 import './eateries/EateryDialogBox.js';
 import './attractions/BizzareDialogBox.js'
 import { prompt } from "./prompt.js";
+import './itinerary/ItineraryDialogBox.js';
 
 prompt()
 
