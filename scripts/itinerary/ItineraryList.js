@@ -65,11 +65,34 @@ contentTarget.innerHTML = ItineraryListHTML.join("")
     }
 })
 
+contentElement.addEventListener("click", clickEvent => {
+
+    // Make sure it was one of the color buttons
+    if (clickEvent.target.id.startsWith("buttonDTL--")) {
+
+        // Get the chosen color
+        const [prefix, chosenItinerary] = clickEvent.target.id.split("--")
+
+        /*
+            Create a new custom event, with a good name, and
+            add a property to the `detail` object that specifies
+            which color was chosen
+        */
+        const itineraryChosenEvent = new CustomEvent("ItineraryChosen", {
+            detail: {
+                itinerary: parseInt(chosenItinerary)
+            }
+        })
+
+        eventHub.dispatchEvent(itineraryChosenEvent)
+    }
+})
+
 // Adds a head title to the saved itineraries list
 export const savedTripsFunc = () => {contentElement.innerHTML += `<h2>Saved Trips</h2>`}
 
 
-//exports render function
+// exports render function
 export const renderSavedItineraries = () =>{
     render()
 }
