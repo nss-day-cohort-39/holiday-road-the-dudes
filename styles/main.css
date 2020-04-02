@@ -41,7 +41,7 @@
   
 }
 
-  button:hover{
+button:hover{
     background-color: #8d6e63;
 }
 
@@ -55,6 +55,7 @@ h2{
 
 dialog{
   background-color: burlywood;
+  border-radius: 2%;
 }
 
 .header {
@@ -70,4 +71,8 @@ dialog{
 
 .pTag {
   margin: 1rem 3rem 1rem 3rem;
+}
+
+.parkDetailsDialog {
+  width: 60%;
 }

@@ -7,16 +7,10 @@
       "id": 1
     },
     {
-      "park": "2F05E2B8-CDA3-434E-9C4C-C7DD828CAC3B",
-      "eatery": 5,
-      "attraction": 9,
+      "park": "6B1D053D-714F-46D1-B410-04BE868F14C1",
+      "eatery": 11,
+      "attraction": 6,
       "id": 2
-    },
-    {
-      "park": "FFC9F9C4-D79D-4CA7-AB0F-7A2AD30061CD",
-      "eatery": 6,
-      "attraction": 5,
-      "id": 3
     }
   ],
   "parks": {
