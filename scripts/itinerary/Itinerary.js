@@ -9,8 +9,9 @@ export const itineraryHTML = (itineraryObject, parkObject, attractionObject, eat
     <div class="savedPark"><h3>Park</h3>${parkObject.name}</div>
     <div class="savedEatery"><h3>Eat</h3>${eateryObject.businessName}</div>
     <div class="savedAttraction"><h3>See</h3>${attractionObject.name}</div>
-    <p>
-      <button id="deleteItinerary--${itineraryObject.id}">Delete Trip</button>
+    <p class "savedItineraryButtons">
+      <button class='itinerary-detail' id="buttonDTL--${itineraryObject.id}">Trip Details</button>
+      <button class="itinerary--delete" id="deleteItinerary--${itineraryObject.id}">Delete Trip</button>
     </p>
     <p>
       <button id="directions--${itineraryObject.id}">Directions</button>
