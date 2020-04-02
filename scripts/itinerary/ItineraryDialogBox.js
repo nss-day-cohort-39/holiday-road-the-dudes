@@ -15,11 +15,22 @@ const contentTarget = document.querySelector('.detailsDialogContainer')
 const itineraryDialogBoxHTML = (itineraryObject, ParkObject, AttractionObject, EateryObject) => {
   contentTarget.innerHTML = `
       <dialog class='itineraryDetailsDialog'>
-        <h4>Trip ${itineraryObject.id}</h4>
-        <h4> ${ParkObject.name}</h4>
-        <h4> ${AttractionObject.name}</h4>
-        <h4> ${EateryObject.businessName}</h4>
-        <button class="button--close">Close</button>
+        <h1 class="itineraryDetailDialog__Title">Trip: ${itineraryObject.id}</h1>
+       
+        <div class="itineraryDetailDialog__Park">
+        <h3>${ParkObject.name}</h3>
+        <div>${ParkObject.description}</div>
+      </div>
+        <div class="itineraryDetailDialog__Attraction">
+        <h3>${AttractionObject.name}</h3>
+        <div>${AttractionObject.description}</div>
+      </div>
+        <div class="itineraryDetailDialog__Eatery">
+        <h3>${EateryObject.businessName}</h3>
+        <div>${EateryObject.description}</div>
+        
+      </div>
+        <button class="itineraryDetailButton--close">Close</button>
       </dialog>
     `
 }
@@ -60,7 +71,7 @@ eventHub.addEventListener("ItineraryChosen", customEvent => {
     const desiredDialog = document.querySelector('.itineraryDetailsDialog')
     desiredDialog.showModal()
 
-    const closeButton = document.querySelector(".button--close")
+    const closeButton = document.querySelector(".itineraryDetailButton--close")
     closeButton.addEventListener(
         "click",
         theEvent => {
