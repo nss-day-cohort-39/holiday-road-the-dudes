@@ -15,7 +15,7 @@ import './itinerary/ItineraryList.js';
 import './eateries/EateryDialogBox.js';
 import './attractions/BizzareDialogBox.js'
 import { prompt } from "./prompt.js";
-import { getCoordinates, useCoordinates } from "./directions/DirectionProvider.js";
+import { useCoordinates } from "./directions/DirectionProvider.js";
 import './itinerary/ItineraryDialogBox.js';
 
 prompt()

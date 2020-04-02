@@ -13,6 +13,7 @@ let selectedPlaces = {
     Attraction: " "
 }
 
+
 let coordinates = {
     Nashville: "",
     Park: "",
@@ -20,25 +21,49 @@ let coordinates = {
     Attraction: ""
 }
 
-export const getCoordinates = () => { 
-        for (const property in selectedPlaces) {
-            fetch (`https://graphhopper.com/api/1/geocode?q=${selectedPlaces[property]}&key=${apiKeys.graphhopperKey}`)
+
+export const getNashvilleCoordinates = () => { 
+        return fetch (`https://graphhopper.com/api/1/geocode?q=${selectedPlaces.Nashville}&key=${apiKeys.graphhopperKey}`)
             .then(response => response.json())
             .then(parsedCoordinates => {
-                coordinates[property] = parsedCoordinates.hits[0].point
+                coordinates.Nashville = parsedCoordinates.hits[0].point
             })
-        }
+}
+
+export const getParksCoordinates = () => { 
+    return fetch (`https://graphhopper.com/api/1/geocode?q=${selectedPlaces.Park}&key=${apiKeys.graphhopperKey}`)
+        .then(response => response.json())
+        .then(parsedCoordinates => {
+            coordinates.Park = parsedCoordinates.hits[0].point
+        })
+}
+
+export const getEateryCoordinates = () => { 
+    return fetch (`https://graphhopper.com/api/1/geocode?q=${selectedPlaces.Eatery}&key=${apiKeys.graphhopperKey}`)
+        .then(response => response.json())
+        .then(parsedCoordinates => {
+            coordinates.Eatery = parsedCoordinates.hits[0].point
+        })
+}
+
+export const getAttractionsCoordinates = () => { 
+    return fetch (`https://graphhopper.com/api/1/geocode?q=${selectedPlaces.Attraction}&key=${apiKeys.graphhopperKey}`)
+        .then(response => response.json())
+        .then(parsedCoordinates => {
+            coordinates.Attraction = parsedCoordinates.hits[0].point
+        })
 }
 
 let routing = []
 
 export const getRouting = (latLongNashville, latLongPark, latLongEatery, latlongAttraction) => { 
-       return fetch (`https://graphhopper.com/api/1/route`)
+       return fetch (`https://graphhopper.com/api/1/route?point=${latLongNashville.lat},${latLongNashville.lng}&point=${latLongPark.lat},${latLongPark.lng}&point=${latLongEatery.lat},${latLongEatery.lng}&point=${latlongAttraction.lat},${latlongAttraction.lng}&key=${apiKeys.graphhopperKey}`)
         .then(response => response.json())
         .then(parsedRouting => {
             routing = parsedRouting
+            console.log(routing)
         })
-    }
+}
 
 
 
@@ -75,8 +100,11 @@ eventHub.addEventListener("directionsClicked", customEvent => {
     selectedPlaces.Eatery = foundEatery.city
     selectedPlaces.Attraction = foundAttraction.city
 
-    console.log(selectedPlaces)
-    getCoordinates()
-    console.log(coordinates)
+    getNashvilleCoordinates()
+       .then(getParksCoordinates)
+       .then(getEateryCoordinates)
+       .then(getAttractionsCoordinates)
+       .then(() => {getRouting(coordinates['Nashville'], coordinates['Park'], coordinates['Eatery'], coordinates['Attraction'])})
+    
     //update selectedPlaces object with name properties of the selected places
 })
