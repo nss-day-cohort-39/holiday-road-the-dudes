@@ -14,8 +14,9 @@ import './parks/ParkDialogBox.js';
 import './itinerary/ItineraryList.js';
 import './eateries/EateryDialogBox.js';
 import './attractions/BizzareDialogBox.js'
+import { prompt } from "./prompt.js";
 
-
+prompt()
 
 getEateries()
     .then(eateriesSelect)
@@ -26,6 +27,10 @@ getEateries()
     .then(getSavedItineraries)
     .then(renderSavedItineraries)
     .then(savedTripsFunc)
+    
+   
+    
+
     
     
 

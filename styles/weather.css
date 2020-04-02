@@ -1,8 +1,9 @@
 .weatherContainer {
-    display: flex;
+    display:flex;
     flex-wrap: wrap;
     flex-basis: 100%;
     justify-content: center;
+
   }
 
 .forecast {
