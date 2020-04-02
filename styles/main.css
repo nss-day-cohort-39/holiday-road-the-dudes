@@ -13,12 +13,18 @@
   text-align: center;
   flex-basis: 28%;
   padding: 10px;
+  border: solid;
+  border-color: #8d6e63;
+  border-radius: 4%;
+  margin-top: 2rem;
+  border-style: double;
 }
 
 .previewContainer {
   display: flex;
   flex-basis: 100%;
   justify-content: center;
+  justify-content: space-around;
 }
 #saveItinerary {
   display: flex;
@@ -31,4 +37,17 @@
     flex-flow: row wrap;
     justify-content: space-evenly;
     background-color:#d7ccc8;
+  
   }
+  button:hover{
+    background-color: #8d6e63;
+}
+.prompt{
+  text-align: center;
+}
+h2{
+  text-decoration: underline;
+}
+dialog{
+  background-color: burlywood;
+}

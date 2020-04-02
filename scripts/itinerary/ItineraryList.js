@@ -51,7 +51,7 @@ eventHub.addEventListener("itineraryStateChanged", customEvent => {
             return itineraryHTML(currentItinerary, foundPark, foundAttraction, foundEatery )
     
 })
-contentTarget.innerHTML = " "
+ contentTarget.innerHTML = " "
 contentTarget.innerHTML = ItineraryListHTML.join("") 
 
 }
@@ -67,6 +67,7 @@ contentTarget.innerHTML = ItineraryListHTML.join("")
 
 // Adds a head title to the saved itineraries list
 export const savedTripsFunc = () => {contentElement.innerHTML += `<h2>Saved Trips</h2>`}
+
 
 //exports render function
 export const renderSavedItineraries = () =>{
