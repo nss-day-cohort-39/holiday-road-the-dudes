@@ -26,6 +26,7 @@
   justify-content: center;
   justify-content: space-around;
 }
+
 #saveItinerary {
   display: flex;
   flex-basis: 100%;
@@ -38,16 +39,40 @@
     justify-content: space-evenly;
     background-color:#d7ccc8;
   
-  }
-  button:hover{
+}
+
+button:hover{
     background-color: #8d6e63;
 }
+
 .prompt{
   text-align: center;
 }
+
 h2{
   text-decoration: underline;
 }
+
 dialog{
   background-color: burlywood;
+  border-radius: 2%;
+}
+
+.header {
+  text-align: center;
+}
+
+.footer {
+  display: flex;
+  flex-flow: row nowrap;
+  color: darkorchid;
+  justify-content: space-evenly;
+}
+
+.pTag {
+  margin: 1rem 3rem 1rem 3rem;
+}
+
+.parkDetailsDialog {
+  width: 60%;
 }
