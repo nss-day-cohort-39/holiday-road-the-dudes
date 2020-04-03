@@ -1,10 +1,11 @@
-// this module is responsible for rendering the attractions dropdown 
-
+/* 
+    This module is responsible for rendering the attractions dropdown 
+*/
 import { useAttractions } from "./BizzareDataProvider.js"
 
 const contentTarget = document.querySelector(".attractionDropdown")
 
-
+// This exports and creates the HTML representation for the attractions dropdown
 export const attractionslSelect = () => {
     
     const attractions = useAttractions()
@@ -29,12 +30,12 @@ export const attractionslSelect = () => {
 const eventHub = document.querySelector(".container")
 
 
-//We want to broadcast that an eatery selection was changed in the eatery dropdown
+//We want to broadcast that an attraction selection was changed in the attraction dropdown
 //listen for a change in value of the <select> element
 contentTarget.addEventListener("change", changeEvent => {
-    //do this only if the value changed is an eatery
+    //do this only if the value changed is an attraction
     if(changeEvent.target.value.startsWith("bizzare--")){
-        //split the value of the selected eatery and store the id in eateryId
+        //split the value of the selected attraction and store the id in attractionId
         const [prefix, bizzareId] = changeEvent.target.value.split("--")
         const theChosenBizzare = bizzareId
         //broadcast a custom event when the change event occurs

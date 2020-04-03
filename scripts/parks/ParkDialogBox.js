@@ -1,14 +1,14 @@
 /*
-This module is responsible for creating the dialog for the park details button 
-and listening for when that details button is clicked
+    This module is responsible for creating the dialog for the park 
+    details button and listening for when that details button is clicked
 */
 
 import { useParks } from './ParksDataProvider.js'
 
 const contentTarget = document.querySelector('.detailsDialogContainer')
 const eventHub = document.querySelector('.container')
-//takes in a park object as a parameter 
-//and creates HTML representation of that park object in a dialog
+
+// Takes in a park object as a parameter and creates HTML representation of that park object in a dialog
 const parkDialog = (park) => {
     contentTarget.innerHTML = `
     <dialog class="parkDetailsDialog">

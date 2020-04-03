@@ -8,10 +8,10 @@ import { useEateries } from "./EateryDataProvider.js"
 
 const contentTarget = document.querySelector(".eateryDropdown")
 
+// This exports and creates the Eatery dropdown
 export const eateriesSelect = () => {
 const eateries = useEateries()
     const renderEateriesDropdown = (eateriesCollection) => {
-        const eateries = useEateries()
         return `
              <select class="dropdown" id="eateriesSelect">
             <option value="0">Places to Eat</option>   

@@ -1,5 +1,6 @@
 /*  
-    This component renders the Parks dropdown on the DOM
+    This component renders the Eatery dropdown on the DOM 
+    and broadcasts that an eatery was selected
 */
 
 import { useParks } from "./ParksDataProvider.js"
@@ -7,7 +8,7 @@ import { useParks } from "./ParksDataProvider.js"
 const contentTarget = document.querySelector(".parkDropdown")
 
 
-
+// This creates and exports the Eatery dropdown
 export const parksSelect = () => {
     const parks = useParks()
 

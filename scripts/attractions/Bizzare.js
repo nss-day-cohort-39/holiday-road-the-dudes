@@ -1,4 +1,6 @@
-//This function makes an HTML representtion 
+/*
+  This function makes an HTML representation of each attraction
+*/
 export const bizzareHTML = (bizzare) => {
     return `
     <div class="bizzare">

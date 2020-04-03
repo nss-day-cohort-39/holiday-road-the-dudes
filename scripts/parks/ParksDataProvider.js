@@ -6,6 +6,7 @@ import apiKeys from "../Settings.js"
 
 let parks = []
 
+// This only exports the objects from our park api that are a National Park
 export const useParks = () => {
     const filteredParks = parks.filter( (object) => {
         if (object.designation.includes("National Park")) {
