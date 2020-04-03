@@ -1,3 +1,6 @@
+/*
+  This is responsible for making an HTML representation of a park
+*/
 export const parkHTML = (park) => {
     return `
     <div id="${park.id} "class="park">

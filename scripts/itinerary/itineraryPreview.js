@@ -14,18 +14,22 @@ import { renderSaveButton } from "./SaveItineraryPreview.js"
 const eventHub = document.querySelector('.container')
 const contentTarget = document.querySelector(".previewContainer")
 
-//this is the 'state' of the itinerary preview section
-//each event listener will update the state of the preview section when a selection is made
-//each event listener will render the current state the preview section
-
+/*
+    this is the 'state' of the itinerary preview section
+    each event listener will update the state of the preview section when a selection is made
+    each event listener will render the current state the preview section
+*/
 export let previewContent = {
   parksPreview: '',
   eateryPreview: '',
   attractionPreview: ''
 }
 
-//the is the function that executes rendering the current state of the preview section
-//it is called within each custom event to render the current state of the preview section when a change is made
+/*
+    This is the function that executes rendering the current state 
+    of the preview section it is called within each custom event to 
+    render the current state of the preview section when a change is made
+*/
 const render = () => {
   contentTarget.innerHTML = `
   ${previewContent.parksPreview}
@@ -106,10 +110,12 @@ const render = () => {
 
 
 
-//this event listener responds to when an eatery is selected in the eatery dropdown
-//it will turn the selected eatery into an HTML respresentation of that eatery, and then
-//it will update the 'state' array (previewContent) at index 0 with the HTML representation of that eatery
-//it will then render the current state of previewContent
+/*
+    This event listener responds to when an eatery is selected in the eatery dropdown
+    it will turn the selected eatery into an HTML respresentation of that eatery, and then
+    it will update the 'state' array (previewContent) at index 0 with the HTML representation of that eatery
+    it will then render the current state of previewContent
+*/
 eventHub.addEventListener("eateryChosen", event =>{
    
     const eateries = useEateries()
@@ -125,6 +131,12 @@ eventHub.addEventListener("eateryChosen", event =>{
 
 })
 
+/*
+    This event listener responds to when an attraction is selected in the attraction dropdown
+    it will turn the selected attraction into an HTML respresentation of that attraction, and then
+    it will update the 'state' array (previewContent) at index 0 with the HTML representation of that attraction
+    it will then render the current state of previewContent
+*/
 eventHub.addEventListener("bizzareChosen", event =>{
    
     const bizzares = useAttractions()
@@ -140,6 +152,12 @@ eventHub.addEventListener("bizzareChosen", event =>{
 
 })
 
+/*
+    This event listener responds to when an park is selected in the park dropdown
+    it will turn the selected park into an HTML respresentation of that park, and then
+    it will update the 'state' array (previewContent) at index 0 with the HTML representation of that park
+    it will then render the current state of previewContent
+*/
 eventHub.addEventListener("parkChosen", event =>{
    
     const parks = useParks()

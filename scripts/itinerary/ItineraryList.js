@@ -3,7 +3,7 @@
     we created and render it to the DOM
 */
 import { itineraryHTML } from "./Itinerary.js";
-import { useItineraries, deleteItinerary, getSavedItineraries } from "./ItineraryDataProvider.js";
+import { useItineraries, deleteItinerary } from "./ItineraryDataProvider.js";
 import { useParks } from "../parks/ParksDataProvider.js";
 import { useEateries } from "../eateries/EateryDataProvider.js";
 import { useAttractions } from "../attractions/BizzareDataProvider.js";
@@ -15,7 +15,6 @@ const contentElement = document.querySelector(".savedItineraryContainer")
 
 // Listen for the state to change
 eventHub.addEventListener("itineraryStateChanged", customEvent => {
-   console.log("itinerary state triggered")
     // When the state changes render the function
    render()
 })
@@ -81,16 +80,16 @@ contentElement.addEventListener("click", clickEvent =>{
 
 contentElement.addEventListener("click", clickEvent => {
 
-    // Make sure it was one of the color buttons
+    // Make sure it was one of the itinerary buttons
     if (clickEvent.target.id.startsWith("buttonDTL--")) {
 
-        // Get the chosen color
+        // Get the chosen itinerary
         const [prefix, chosenItinerary] = clickEvent.target.id.split("--")
 
         /*
             Create a new custom event, with a good name, and
             add a property to the `detail` object that specifies
-            which color was chosen
+            which itinerary was chosen
         */
         const itineraryChosenEvent = new CustomEvent("ItineraryChosen", {
             detail: {

@@ -5,8 +5,9 @@ import { useEateries } from './EateryDataProvider.js'
 
 const contentTarget = document.querySelector('.detailsDialogContainer')
 const eventHub = document.querySelector('.container')
-//takes in a Eatery object as a parameter 
-//and creates HTML representation of that Eatery object in a dialog
+
+
+//takes in a Eatery object as a parameter and creates HTML representation of that Eatery object in a dialog
 const eateryDialog = (eatery) => {
     contentTarget.innerHTML = `
     <dialog class="eateryDetailsDialog">
@@ -34,6 +35,7 @@ eventHub.addEventListener("eateryButtonClicked", customEvent => {
     const desiredDialog = document.querySelector('.eateryDetailsDialog')
     desiredDialog.showModal()
     
+    // This listens for when the close button is clicked and closes the popup when heard
     const closeButton = document.querySelector(".button--close")
     closeButton.addEventListener(
         "click",

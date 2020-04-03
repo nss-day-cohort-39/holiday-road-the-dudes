@@ -10,14 +10,14 @@ const contentTarget = document.querySelector('#saveItinerary')
 const eventHub = document.querySelector('.container')
 
 
-
+// HTML representation of the save button
 const saveButtonHTML = () => {
 return `<section class="button">
        <button id="saveItinerary" type="submit">Save Itinerary</button>    
     </section>`
 }
 
-
+// This will render the save button only if all three selections have been made
 export const renderSaveButton = () => {
     const saveButton = saveButtonHTML()
     if ( previewContent.parksPreview !== "" && previewContent.eateryPreview !== "" && previewContent.attractionPreview !== "") {
@@ -25,6 +25,11 @@ export const renderSaveButton = () => {
     }
 }
 
+/* 
+    This listens for the save button to be clicked and saves the value of the 
+    selected park, eatery, and attraction and uses that information to create 
+    a new object then adds that to the itineraries array in our JSON file.
+*/
 eventHub.addEventListener("click", e => {
     if(e.target.id === "saveItinerary") {
         const parkSaved = document.querySelector("#parksSelect").value

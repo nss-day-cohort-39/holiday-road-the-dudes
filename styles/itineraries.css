@@ -5,15 +5,19 @@
     margin: 2rem;
     border-radius: 3%;
 }
+
+
 .itinerary header {
     font-weight: bold;
     margin: 5px;
 }
+
 #saveItinerary {
     display: flex;
     flex-basis: 100%;
     justify-content: center;
 }
+
 .savedItineraryContainer {
     display:flex;
     flex-flow:column-reverse;
@@ -50,7 +54,7 @@
 }
 
 .itineraryDetailsDialog{
-    width: 90%;
+    width: 60%;
 }
 
 .savedItineraryButtons {
@@ -59,9 +63,9 @@
 }
 
 .itinerary-detail{
-    margin: 1rem;
+    margin: .5rem;
 }
 
 .itinerary--delete{
-    margin: 1rem;
+    margin: .5rem;
 }
