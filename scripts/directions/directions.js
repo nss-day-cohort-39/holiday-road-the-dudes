@@ -38,7 +38,3 @@ export const directionsHTML = (directionsObject) => {
     </dialog>    
     `
 }
-
-if (singleInstruction.text === "Waypoint 1") {
-    singleInstruction.text = foundPark.fullName
-}
