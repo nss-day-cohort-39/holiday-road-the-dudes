@@ -15,9 +15,10 @@ export const getEateries = () => {
             eateries = parsedEateries
         }).then()
 }
-
+//This function exports a copy of the eateries data.
 export const useEateries = () => {
     const sortedEateries = eateries.sort((a, b) => {
+        //The code below puts the eateries in Alphabetical order by state.
         if(a.state < b.state) { return -1; }
         if(a.state > b.state) { return 1; }
         return 0;

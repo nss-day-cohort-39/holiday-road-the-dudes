@@ -1,9 +1,13 @@
+/*
+    This component is responsible for the creation and managment of the attractions diolog box
+*/
 import { useAttractions } from './BizzareDataProvider.js'
 
 const contentTarget = document.querySelector('.detailsDialogContainer')
 const eventHub = document.querySelector('.container')
-//takes in a Eatery object as a parameter 
-//and creates HTML representation of that Eatery object in a dialog
+
+//takes in a attraction object as a parameter 
+//and creates HTML representation of that attraction object in a dialog
 const attractionDialog = (attraction) => {
     contentTarget.innerHTML = `
     <dialog class="attractionDetailsDialog">
@@ -30,6 +34,7 @@ eventHub.addEventListener("attractionButtonClicked", customEvent => {
     const desiredDialog = document.querySelector('.attractionDetailsDialog')
     desiredDialog.showModal()
     
+    // Listens for the close button to be clicked and closes the popup when it is clicked
     const closeButton = document.querySelector(".button--close")
     closeButton.addEventListener(
         "click",

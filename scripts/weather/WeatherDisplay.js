@@ -1,5 +1,5 @@
 /* 
-    This component puts the weather html on the DOM based on the park that was selected from the dropdown
+    This component puts the weather HTML on the DOM based on the park that was selected from the dropdown
 */
 
 import { getWeather, useWeather } from "./WeatherDataProvider.js"
