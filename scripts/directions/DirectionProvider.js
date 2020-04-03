@@ -3,8 +3,10 @@ import { useItineraries } from "../itinerary/ItineraryDataProvider.js"
 import { useParks } from "../parks/ParksDataProvider.js"
 import { useEateries } from "../eateries/EateryDataProvider.js"
 import { useAttractions } from "../attractions/BizzareDataProvider.js"
+import { directionsHTML } from "./directions.js"
 
 const eventHub = document.querySelector(".container")
+const contentTarget = document.querySelector('.detailsDialogContainer')
 
 let selectedPlaces = {
     Nashville: "nashville",
@@ -54,14 +56,13 @@ export const getAttractionsCoordinates = () => {
         })
 }
 
-let routing = []
+let routing = {}
 
 export const getRouting = (latLongNashville, latLongPark, latLongEatery, latlongAttraction) => { 
        return fetch (`https://graphhopper.com/api/1/route?point=${latLongNashville.lat},${latLongNashville.lng}&point=${latLongPark.lat},${latLongPark.lng}&point=${latLongEatery.lat},${latLongEatery.lng}&point=${latlongAttraction.lat},${latlongAttraction.lng}&key=${apiKeys.graphhopperKey}`)
         .then(response => response.json())
         .then(parsedRouting => {
             routing = parsedRouting
-            console.log(routing)
         })
 }
 
@@ -96,7 +97,7 @@ eventHub.addEventListener("directionsClicked", customEvent => {
     // const eateryCityState = `${foundEatery.city} ${foundEatery.state}`
     // const attractionCityState = `${foundAttraction.city} ${foundAttraction.state}`
 
-    selectedPlaces.Park = foundPark.fullName
+    selectedPlaces.Park = `${foundPark.name} ${foundPark.addresses[0].city}`
     selectedPlaces.Eatery = foundEatery.city
     selectedPlaces.Attraction = foundAttraction.city
 
@@ -104,7 +105,15 @@ eventHub.addEventListener("directionsClicked", customEvent => {
        .then(getParksCoordinates)
        .then(getEateryCoordinates)
        .then(getAttractionsCoordinates)
-       .then(() => {getRouting(coordinates['Nashville'], coordinates['Park'], coordinates['Eatery'], coordinates['Attraction'])})
+       .then(() => {
+           getRouting(coordinates['Nashville'], coordinates['Park'], coordinates['Eatery'], coordinates['Attraction'])
+            .then(() => {
+                console.log(routing)
+                contentTarget.innerHTML = directionsHTML(routing)
+                const dialog = document.querySelector('.directionsDialog')
+                dialog.showModal()
+            })
+        })
     
     //update selectedPlaces object with name properties of the selected places
 })
