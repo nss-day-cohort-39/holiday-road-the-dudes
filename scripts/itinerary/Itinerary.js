@@ -13,6 +13,9 @@ export const itineraryHTML = (itineraryObject, parkObject, attractionObject, eat
       <button class='itinerary-detail' id="buttonDTL--${itineraryObject.id}">Trip Details</button>
       <button class="itinerary--delete" id="deleteItinerary--${itineraryObject.id}">Delete Trip</button>
     </p>
+    <p>
+      <button id="directions--${itineraryObject.id}">Directions</button>
+    </p>
     </article>
     `
 } 

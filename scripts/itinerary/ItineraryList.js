@@ -64,6 +64,20 @@ contentTarget.innerHTML = ItineraryListHTML.join("")
     }
 })
 
+// Targets a specific id when the directions button is clicked
+contentElement.addEventListener("click", clickEvent =>{
+    if(clickEvent.target.id.startsWith("directions--")){
+        const [prefix, itineraryId] = clickEvent.target.id.split("--")
+        
+        const directionsEvent = new CustomEvent ("directionsClicked", {
+            detail: {
+                itineraryId: parseInt(itineraryId)
+            }
+        })
+       eventHub.dispatchEvent(directionsEvent)
+    }
+})
+
 contentElement.addEventListener("click", clickEvent => {
 
     // Make sure it was one of the itinerary buttons
@@ -95,4 +109,4 @@ export const savedTripsFunc = () => {contentElement.innerHTML += `<h2>Saved Trip
 export const renderSavedItineraries = () =>{
     render()
 }
-       
+

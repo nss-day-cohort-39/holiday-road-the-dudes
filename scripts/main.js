@@ -15,6 +15,7 @@ import './itinerary/ItineraryList.js';
 import './eateries/EateryDialogBox.js';
 import './attractions/BizzareDialogBox.js'
 import { prompt } from "./prompt.js";
+import { useCoordinates } from "./directions/DirectionProvider.js";
 import './itinerary/ItineraryDialogBox.js';
 import { Header } from "./header.js";
 import { Footer } from "./footer.js";
@@ -31,6 +32,7 @@ getEateries()
     .then(getSavedItineraries)
     .then(renderSavedItineraries)
     .then(savedTripsFunc)
+
     
    
     
